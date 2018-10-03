@@ -28,4 +28,12 @@ git push origin <your name>
 ```
 
 以上を行い、pull requestを自分のgithubのリポジトリから発行します
-marge先はai-medicalのmasterにお願いします
+
+https://github.com/ai-medical/ai-medical.github.io
+にアクセスし
+
+![AIMS github page](pull-request1.png "AIMS github page")
+
+AIMSのmasterにmargeを指定してください
+
+![AIMS github pull request](pull-request2.png "AIMS github pull request")
