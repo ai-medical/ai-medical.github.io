@@ -91,23 +91,21 @@ jQuery(document).ready(function($) {
     if (ferror) return false;
     else var str = $(this).serialize();
     $.ajax({
+      url: 'https://api.staticforms.xyz/submit',
       type: "POST",
-      url: "contactform/contactform.php",
+      dataType: 'json',
       data: str,
-      success: function(msg) {
-        // alert(msg);
-        if (msg == 'OK') {
-          $("#sendmessage").addClass("show");
-          $("#errormessage").removeClass("show");
-          $('.contactForm').find("input, textarea").val("");
-        } else {
-          $("#sendmessage").removeClass("show");
-          $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
-        }
-
+      success: function(result) {
+        $("#sendmessage").addClass("show");
+        $("#errormessage").removeClass("show");
+        $('.contactForm').find("input, textarea").val("");
+      },
+      error: function(xhr, resp, text) {
+        $("#sendmessage").removeClass("show");
+        $("#errormessage").addClass("show");
+        $('#errormessage').html(text);
       }
-    });
+    })
     return false;
   });
 
