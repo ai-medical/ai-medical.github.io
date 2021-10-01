@@ -431,6 +431,10 @@ news
 	cursor: pointer;
 }
 
+.achivement li{
+	text-align: left;
+	margin-left: 10%;
+}
 
 /* ================================
 Works

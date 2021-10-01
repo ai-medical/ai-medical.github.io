@@ -15,63 +15,66 @@
   });
 
   //navigation
-  $('.navigation').onePageNav({
-    scrollOffset: 0
-  });
+  // $('.navigation').onePageNav({
+  //   scrollOffset: 0
+  // });
 
   $(".navbar-collapse a").on('click', function() {
     $(".navbar-collapse.collapse").removeClass('in');
   });
 
   //Home Background Slider
+  var fileName = window.location.href.split('/').pop()
+  if (fileName == "index.html"){
+    $(function() {
 
-  $(function() {
-
-    $.mbBgndGallery.buildGallery({
-      containment: "#intro",
-      timer: 3000,
-      effTimer: 1000,
-      controls: "#controls",
-      grayScale: false,
-      shuffle: false,
-      preserveWidth: false,
-      effect: "fade",
-      effect: {
-        enter: {
-          left: 0,
-          opacity: 0
+      $.mbBgndGallery.buildGallery({
+        containment: "#intro",
+        timer: 3000,
+        effTimer: 1000,
+        controls: "#controls",
+        grayScale: false,
+        shuffle: false,
+        preserveWidth: false,
+        effect: "fade",
+        effect: {
+          enter: {
+            left: 0,
+            opacity: 0
+          },
+          exit: {
+            left: 0,
+            opacity: 0
+          },
+          enterTiming: "ease-in",
+          exitTiming: "ease-in"
         },
-        exit: {
-          left: 0,
-          opacity: 0
-        },
-        enterTiming: "ease-in",
-        exitTiming: "ease-in"
-      },
-
-      // If your server allow directory listing you can use:
-      // (however this doesn't work locally on your computer)
-
-      //folderPath:"testImage/",
-
-      // else:
-
-      images: [
-        "img/bgslides/1.jpg",
-        "img/bgslides/2.jpg",
-        "img/bgslides/3.jpg"
-      ],
-
-      onStart: function() {},
-      onPause: function() {},
-      onPlay: function(opt) {},
-      onChange: function(opt, idx) {},
-      onNext: function(opt) {},
-      onPrev: function(opt) {}
+  
+        // If your server allow directory listing you can use:
+        // (however this doesn't work locally on your computer)
+  
+        //folderPath:"testImage/",
+  
+        // else:
+  
+        images: [
+          "img/bgslides/4.jpeg",
+          "img/bgslides/5.jpeg",
+          "img/bgslides/1.jpg",
+          "img/bgslides/2.jpg",
+          "img/bgslides/3.jpg"
+        ],
+  
+        onStart: function() {},
+        onPause: function() {},
+        onPlay: function(opt) {},
+        onChange: function(opt, idx) {},
+        onNext: function(opt) {},
+        onPrev: function(opt) {}
+      });
+  
     });
-
-
-  });
+  }
 
   // featured text
   $("#rotator .1strotate").textrotator({
@@ -84,19 +87,21 @@
   });
 
   // Fixed navbar
-  $(window).scroll(function() {
+  // $(window).scroll(function() {
 
-    var scrollTop = $(window).scrollTop();
+  //   var scrollTop = $(window).scrollTop();
 
-    if (scrollTop > 200) {
-      $('.navbar-default').css('display', 'block');
-      $('.navbar-default').addClass('fixed-to-top');
+  //   if (scrollTop > 200) {
+  //     $('.navbar-default').css('display', 'block');
+  //     $('.navbar-default').addClass('fixed-to-top');
 
-    } else if (scrollTop == 0) {
+  //   } else if (scrollTop == 0) {
 
-      $('.navbar-default').removeClass('fixed-to-top');
-    }
-  });
+  //     $('.navbar-default').removeClass('fixed-to-top');
+  //   }
+  // });
+  $('.navbar-default').css('display', 'block');
+  $('.navbar-default').addClass('fixed-to-top');
 
 
   //parallax
