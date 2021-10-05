@@ -25,7 +25,7 @@
 
   //Home Background Slider
   var fileName = window.location.href.split('/').pop()
-  if (fileName == "index.html"){
+  if (fileName == "index.html" || fileName == ""){
     $(function() {
 
       $.mbBgndGallery.buildGallery({
